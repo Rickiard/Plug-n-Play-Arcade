@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-t" />
+    <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
@@ -10,7 +10,8 @@
       content="A collection of fun mini-games"
     />
     <title>Plug'n Play Game Arcade</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS will be included via index.css built by Vite -->
+    <link rel="stylesheet" href="/index.css">
     <style>
       @keyframes fade-in {
         from { opacity: 0; }
@@ -27,25 +28,13 @@
         animation: scale-in 0.3s ease-out;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "react": "https://esm.sh/react@^19.1.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
-  }
-}
-</script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<link rel="stylesheet" href="/index.css">
-</head>
+  </head>
   <body class="bg-slate-900 text-white">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script type="text/babel" data-presets="react,typescript" src="./index.tsx"></script>
-  <script type="module" src="/index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
      crossorigin="anonymous"></script>
-</body>
+  </body>
 </html>
