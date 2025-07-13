@@ -1,12 +1,13 @@
 // Block Breaker Game
 (function() {
   const container = document.createElement('div');
-  container.className = 'game-blockbreaker';
+  container.className = 'game-container game-blockbreaker';
   container.innerHTML = `
-    <h2>Block Breaker</h2>
-    <canvas id="bb-canvas" width="400" height="300" style="background:#232946;display:block;margin:0 auto;"></canvas>
-    <div id="bb-score">Score: 0</div>
-    <button id="bb-back">Back</button>
+    <h2 class="text-center text-light mb-2">Block Breaker</h2>
+    <div class="alert alert-info text-dark mb-3" style="background: #181e2a; color: #eebbc3; border: 1px solid #6366f1; font-size:1.1rem; line-height:1.7; max-width:400px; margin:0 auto; font-weight:500;">Move the paddle with your mouse to bounce the ball and break all blocks.<br>Don't let the ball fall below the paddle!</div>
+    <canvas id="bb-canvas" class="game-canvas" width="400" height="300"></canvas>
+    <div id="bb-score" class="game-score mb-2">Score: 0</div>
+    <button id="bb-back" class="game-back mb-2" style="width:100%;">Back</button>
   `;
   const canvas = container.querySelector('#bb-canvas');
   const ctx = canvas.getContext('2d');
@@ -71,6 +72,7 @@
   window.showBlockBreakerGame = function() {
     document.getElementById('arcade').style.display = 'none';
     document.body.appendChild(container);
+    gsap.from(container, {duration: 0.7, y: 50, opacity: 0, ease: 'power2.out'});
     reset();
   };
 })();

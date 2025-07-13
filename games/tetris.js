@@ -10,9 +10,9 @@
 
     // --- DOM Elements ---
     const container = document.createElement('div');
-    container.className = 'game-tetris shadow-lg rounded p-4 bg-dark d-flex flex-column align-items-center';
+    container.className = 'game-container game-tetris';
     container.innerHTML = `
-        <div class="tetris-main w-100" style="max-width:320px;">
+        <div class="tetris-main w-100" style="max-width:340px;">
             <h2 class="text-white text-center mb-2">Tetris Game</h2>
             <div class="mb-2 d-flex justify-content-center gap-2" id="tetris-menu">
                 <button id="tetris-start" class="btn btn-success btn-sm">Start</button>
@@ -21,17 +21,17 @@
             </div>
             <div class="d-flex justify-content-between align-items-end mb-2">
                 <div class="text-white text-start">
-                    <div id="tetris-level" class="fw-bold" style="font-size:1.1rem; color:#eebbc3;">Level: 0</div>
-                    <div id="tetris-lines" class="fw-bold" style="font-size:1.1rem; color:#eebbc3;">Lines: 0</div>
+                    <div id="tetris-level" class="fw-bold">Level: 0</div>
+                    <div id="tetris-lines" class="fw-bold">Lines: 0</div>
                 </div>
                 <div id="tetris-next-piece" style="width:80px; height:80px; background:#181e2a; border-radius:0.5rem; display:flex; justify-content:center; align-items:center;">
                     <canvas id="tetris-next-canvas" width="80" height="80"></canvas>
                 </div>
             </div>
-            <canvas id="tetris-canvas" width="${BOARD_WIDTH * BLOCK_SIZE}" height="${BOARD_HEIGHT * BLOCK_SIZE}" style="background:#232946;display:block;margin:0 auto 1rem auto;border-radius:1rem;box-shadow:0 2px 8px #0006;"></canvas>
-            <div id="tetris-score" class="fw-bold mb-2 text-center" style="font-size:1.3rem;color:#eebbc3;background:#181e2a;padding:0.5rem 1rem;border-radius:0.5rem;box-shadow:0 1px 4px #0004;">Score: 0</div>
+            <canvas id="tetris-canvas" class="game-canvas" width="${BOARD_WIDTH * BLOCK_SIZE}" height="${BOARD_HEIGHT * BLOCK_SIZE}"></canvas>
+            <div id="tetris-score" class="game-score mb-2">Score: 0</div>
             <button id="tetris-playagain" class="btn btn-primary mb-2" style="width:100%; display:none;">Play Again</button>
-            <button id="tetris-back" class="btn btn-secondary m-2" style="width:100%;">Back</button>
+            <button id="tetris-back" class="game-back m-2" style="width:100%;">Back</button>
             <div class="tetris-instructions mt-3 w-100">
                 <div class="alert alert-info text-dark mb-3" style="background: #232946; color: #eebbc3; border: 1px solid #444; font-size:1.1rem; line-height:1.7; max-height:180px; overflow-y:auto;">
                     <strong>Instructions:</strong><br>

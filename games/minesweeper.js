@@ -1,7 +1,6 @@
 (function () {
   const container = document.createElement('div');
   container.className = 'game-minesweeper';
-  container.style.marginBottom = '80px';
   container.innerHTML = `
     <h2 style="text-align:center;color:white;">Minesweeper</h2>
     <div id="ms-board" style="display:grid;grid-template:repeat(5,1fr)/repeat(5,1fr);gap:2px;width:250px;margin:0 auto;"></div>
